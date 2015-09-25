@@ -4,7 +4,19 @@
 </p>
 <div class='question-content'>
   {{question.content}}
+  {{#if question.answers}}
+    <h4>Answers</h4>
+    <ul>
+      {{#each question.answers as |answer|}}
+        <li class='answer'><span class='name'><h4 class='title'>{{answer.user}}</h4>--{{moment-from-now answer.createdAt}}</span><div class='answer-body'>
+          {{answer.content}}
+        </div></li>
+      {{/each}}
+    </ul>
+  {{/if}}
+
 
 </div>
 <button class='btn btn-danger delete' {{action 'delete' question}}>Delete</button>
-{{question-update question=question update="update" class='update'}}
+{{question-update question=question update="update" class='button-inline'}}
+{{answer-add question=question class='button-inline' id='line-up' saveAnswer='saveAnswer'}}

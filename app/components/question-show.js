@@ -9,6 +9,9 @@ export default Ember.Component.extend({
       if(confirm('Are you sure?')){
         this.sendAction('delete', question)
       }
+    },
+    saveAnswer(params) {
+      this.sendAction('saveAnswer', params)
     }
   }
 });
