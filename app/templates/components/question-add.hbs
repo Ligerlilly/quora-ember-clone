@@ -10,8 +10,9 @@
     </div>
     <div class='form-group'>
       <label>Enter Content:</label>
-      {{input value=content id='content' class='form-control'}}
+      {{textarea cols="80" rows="8" value=content id='content' class='form-control'}}
     </div>
+    <button class='btn btn-danger' {{action 'hideQuestionForm'}}>Cancel</button>
     <button class='btn btn-primary' {{action "save"}}>Save</button>
   </form>
 {{else}}

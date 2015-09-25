@@ -5,3 +5,24 @@
 .add {
   margin-bottom: 2em;
 }
+
+.question-content {
+  border-top: 1px solid black;
+}
+
+.edit {
+  margin-top: 1em;
+}
+
+.edit-form {
+  margin-top: 1em;
+}
+
+.delete {
+  margin-top: 1em;
+  display: inline;
+}
+
+.update {
+  display: inline;
+}

@@ -1,0 +1,20 @@
+{{#if updateQuestion}}
+<form class='edit-form'>
+  <div class='form-group'>
+    <label>Enter Title:</label>
+    {{input value=question.title id='title' class='form-control'}}
+  </div>
+  <div class='form-group'>
+    <label>Enter Name:</label>
+    {{input value=question.user id='user' class='form-control'}}
+  </div>
+  <div class='form-group'>
+    <label>Enter Content:</label>
+    {{textarea cols="80" rows="8" value=question.content id='content' class='form-control'}}
+  </div>
+  <button class='btn btn-danger' {{action 'hideQuestionForm'}}>Cancel</button>
+  <button class='btn btn-primary' {{action "update" question}}>Save</button>
+</form>
+{{else}}
+<button class='btn btn-info edit' {{action 'showQuestionForm'}}>Edit Question</button>
+{{/if}}

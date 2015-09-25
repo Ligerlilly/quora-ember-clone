@@ -4,4 +4,7 @@
 </p>
 <div class='question-content'>
   {{question.content}}
+
 </div>
+<button class='btn btn-danger delete' {{action 'delete' question}}>Delete</button>
+{{question-update question=question update="update" class='update'}}
