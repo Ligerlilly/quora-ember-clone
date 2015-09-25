@@ -1,0 +1,19 @@
+{{#if newQuestion}}
+  <form>
+    <div class='form-group'>
+      <label>Enter Title:</label>
+      {{input value=title id='title' class='form-control'}}
+    </div>
+    <div class='form-group'>
+      <label>Enter Name:</label>
+      {{input value=user id='user' class='form-control'}}
+    </div>
+    <div class='form-group'>
+      <label>Enter Content:</label>
+      {{input value=content id='content' class='form-control'}}
+    </div>
+    <button class='btn btn-primary' {{action "save"}}>Save</button>
+  </form>
+{{else}}
+   <button class='btn btn-info add' {{action 'showQuestionForm'}}>Add Question</button>
+{{/if}}
