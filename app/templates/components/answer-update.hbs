@@ -1,0 +1,16 @@
+{{#if updateAnswer}}
+<form class='edit-form'>
+  <div class='form-group'>
+    <label>Enter Name:</label>
+    {{input value=answer.user id='user' class='form-control'}}
+  </div>
+  <div class='form-group'>
+    <label>Enter Content:</label>
+    {{textarea cols="80" rows="8" value=answer.content id='content' class='form-control'}}
+  </div>
+  <button class='btn btn-danger' {{action 'hideAnswerForm'}}>Cancel</button>
+  <button class='btn btn-primary' {{action "editAnswer" answer}}>Save</button>
+</form>
+{{else}}
+<button class='btn btn-info btn-xs button-inline' {{action 'showAnswerForm'}}>Edit Answer</button>
+{{/if}}
