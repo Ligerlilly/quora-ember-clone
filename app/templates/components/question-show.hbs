@@ -18,6 +18,8 @@
 
 
 </div>
-<button class='btn btn-danger delete' {{action 'delete' question}}>Delete</button>
-{{question-update question=question update="update" class='button-inline'}}
+{{#if (can-edit-delete question session.currentUser.email)}}
+  <button class='btn btn-danger delete' {{action 'delete' question}}>Delete</button>
+  {{question-update question=question update="update" class='button-inline'}}
+{{/if}}
 {{answer-add question=question class='button-inline' id='line-up' saveAnswer='saveAnswer' session=session}}
