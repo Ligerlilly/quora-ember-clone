@@ -4,7 +4,12 @@ export default Ember.Component.extend({
   newAnswer: false,
   actions: {
     showAnswerForm() {
-      this.set('newAnswer', true);
+      if (this.get('session.isAuthenticated') !== true) {
+        $("#login").modal()
+      }
+      else {
+        this.set('newAnswer', true);
+      }
     },
     hideAnswerForm() {
       this.set('newAnswer', false);

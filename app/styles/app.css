@@ -46,3 +46,10 @@ ul {
   margin-top: .5em;
 
 }
+
+.center-text {
+  text-align: center;
+}
+.center-div {
+  margin: 0 auto 0 auto;
+}

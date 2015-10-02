@@ -6,6 +6,9 @@ module.exports = function(environment) {
     environment: environment,
     contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
     firebase: 'https://quora-ember-clone.firebaseio.com/',
+    torii: {
+      sessionServiceName: 'session'
+    },
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -13,6 +16,15 @@ module.exports = function(environment) {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       }
+    },
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-eval' https://*.firebaseio.com" ,
+      'font-src': "'self' https://*.gstatic.com",
+      'connect-src': "'self' wss://*.firebaseio.com",
+      'img-src': "'self' *",
+      'style-src': "'self' 'unsafe-inline' https://*.googleapis.com",
+      'frame-src': "'self' https://*.firebaseio.com"
     },
 
     APP: {

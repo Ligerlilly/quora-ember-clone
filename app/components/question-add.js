@@ -4,7 +4,15 @@ export default Ember.Component.extend({
   newQuestion: false,
   actions: {
     showQuestionForm() {
-      this.set('newQuestion', true);
+      if (this.get('session.isAuthenticated') !== true) {
+        $("#login").modal()
+      }
+      else {
+        this.set('newQuestion', true);
+      }
+
+
+
     },
     hideQuestionForm() {
       this.set('newQuestion', false);
