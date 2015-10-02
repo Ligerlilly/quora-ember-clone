@@ -22,6 +22,7 @@ export default Ember.Component.extend({
         title: this.get('title'),
         user: this.get('user'),
         content: this.get('content'),
+        author: this.get('session.currentUser.email'),
         createdAt: new Date(),
         updatedAt: ''
       };
