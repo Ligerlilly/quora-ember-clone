@@ -9,8 +9,11 @@
     <ul>
       {{#each question.answers as |answer|}}
         <li class='answer'><span class='name'><h4 class='title'>{{answer.user}}</h4>--{{moment-from-now answer.createdAt}}</span><div class='answer-body'>
-          {{answer.content}}
-        </div><a class='btn btn-danger btn-xs button-inline' {{action 'deleteAnswer' answer}}>Delete</a>{{answer-update answer=answer editAnswer='editAnswer'}}</li>
+          {{answer.content}}</div>
+          {{#if (can-edit-delete answer.author session.currentUser.email)}}
+            <a class='btn btn-danger btn-xs button-inline' {{action 'deleteAnswer' answer}}>Delete</a>{{answer-update answer=answer editAnswer='editAnswer'}}
+          {{/if}}
+        </li>
 
       {{/each}}
     </ul>
@@ -18,7 +21,7 @@
 
 
 </div>
-{{#if (can-edit-delete question session.currentUser.email)}}
+{{#if (can-edit-delete question.author session.currentUser.email)}}
   <button class='btn btn-danger delete' {{action 'delete' question}}>Delete</button>
   {{question-update question=question update="update" class='button-inline'}}
 {{/if}}
