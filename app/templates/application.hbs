@@ -9,7 +9,7 @@
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a>{{#if session.isAuthenticated}}
+        <li><a class='handle'>{{#if session.isAuthenticated}}
           Logged in as {{session.currentUser.email}}
           <button {{action "signOut"}} class='btn btn-warning'>Sign out</button>
           {{else}}
@@ -80,8 +80,8 @@
       <div class="modal-body">
         <h4 class='center-text'>You must either Sign In or Sign Up</h4>
         <center>
-          <button class='btn btn-info' data-toggle="modal" data-target="#signIn" data-dismiss='modal'>Sign In</button>
-          <button class='btn btn-info' data-toggle="modal" data-target="#signUp" data-dismiss='modal'>Sign Up</button>
+          <button class='btn btn-info signIn' data-toggle="modal" data-target="#signIn" data-dismiss='modal'>Sign In</button>
+          <button class='btn btn-info signUp' data-toggle="modal" data-target="#signUp" data-dismiss='modal'>Sign Up</button>
         </center>
       </div>
       <div class="modal-footer">
