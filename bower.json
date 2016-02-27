@@ -10,11 +10,12 @@
     "ember-qunit": "0.4.9",
     "ember-qunit-notifications": "0.0.7",
     "ember-resolver": "~0.1.18",
-    "firebase": "^2.1.0",
-    "jquery": "^1.11.3",
+    "firebase": "^2.4.1",
+    "jquery": "1.11.3",
     "loader.js": "ember-cli/loader.js#3.2.1",
     "moment": ">= 2.8.0",
     "moment-timezone": ">= 0.1.0",
-    "qunit": "~1.18.0"
+    "qunit": "~1.18.0",
+    "emberfire": "^1.6.5"
   }
 }

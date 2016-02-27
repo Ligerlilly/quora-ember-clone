@@ -23,10 +23,10 @@ export default Ember.Route.extend({
     },
     saveAnswer(params) {
       var newAnswer = this.store.createRecord('answer', params);
-      newAnswer.save();
-      params.question.save();
-      this.transitionTo(question, params.question.id);
-      window.location.reload();
+      newAnswer.save().then(() => {
+        return params.question.save()
+      });
+      this.transitionTo('question', params.question.id);
     },
     deleteAnswer(answer) {
       answer.destroyRecord();
